@@ -11,11 +11,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem "paperclip"
 # gem "aws-s3", :lib => "aws/s3"
 
-# gem "formtastic"
-
-# Export to CSV
-gem "fastercsv"
-
 # Error Reporting
 gem "hoptoad_notifier"
 
@@ -25,7 +20,7 @@ gem "friendly_id", "~> 3.2.1"
 # I don't think I'm going to use this one. Just bootstrap it.
 # gem 'rails-settings', :lib => 'settings'
 
-# Before I could just  
+# To zip or not to zip. 
 # gem 'rubyzip2'
 
 # Authentication / Authorization
