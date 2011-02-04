@@ -7,6 +7,42 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+# store attachments ?
+# gem "paperclip"
+# gem "aws-s3", :lib => "aws/s3"
+
+# gem "formtastic"
+
+# Export to CSV
+gem "fastercsv"
+
+# Error Reporting
+gem "hoptoad_notifier"
+
+# slug URLs
+gem "friendly_id", "~> 3.2.1"
+
+# I don't think I'm going to use this one. Just bootstrap it.
+# gem 'rails-settings', :lib => 'settings'
+
+# Before I could just  
+# gem 'rubyzip2'
+
+# Authentication / Authorization
+gem 'devise'
+# gem 'cancan'
+# hpricot and ruby_parser required for devise:views generator
+gem 'hpricot'
+gem 'ruby_parser'
+
+# jQuery
+gem 'jquery-rails', '>= 0.2.6'
+
+
+# Pagination with pre-release of Rails 3 compatible will_paginate
+gem "will_paginate", "~> 3.0.pre2"
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
