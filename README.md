@@ -81,12 +81,12 @@ Heroku and Amazon S3 for file uploads, but this could be easily modified for a V
 
 ## Language / Framework
 
-* Ruby 1.8.7 p72
-* Rails 2.3.5
+* Ruby 1.9.2
+* Rails 3.0.3
 
 ## Plugins / Gems / Generators
 
-* [Authlogic](http://github.com/binarylogic/authlogic)
+* [Devise](https://github.com/plataformatec/devise)
 * [FasterCSV](http://rubygems.org/gems/fastercsv)
 * [Friendly_ID](http://github.com/norman/friendly_id)
 * [Paperclip](http://github.com/thoughtbot/paperclip)
@@ -104,6 +104,6 @@ Heroku and Amazon S3 for file uploads, but this could be easily modified for a V
 * Hoptoad
 
 ## License
-Copyright &copy; 2010 Chase Southard, released under the MIT license. 
+Copyright &copy; 2011 Chase Southard, released under the MIT license. 
 
 
