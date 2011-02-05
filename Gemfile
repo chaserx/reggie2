@@ -27,8 +27,8 @@ gem "friendly_id", "~> 3.2.1"
 gem 'devise'
 # gem 'cancan'
 # hpricot and ruby_parser required for devise:views generator
-gem 'hpricot'
-gem 'ruby_parser'
+gem 'hpricot', :group => :development
+gem 'ruby_parser', :group => :development
 
 # jQuery
 gem 'jquery-rails', '>= 0.2.6'
@@ -37,6 +37,7 @@ gem 'jquery-rails', '>= 0.2.6'
 # Pagination with pre-release of Rails 3 compatible will_paginate
 gem "will_paginate", "~> 3.0.pre2"
 
+gem "nifty-generators", :group => :development
 
 # Use unicorn as the web server
 # gem 'unicorn'
