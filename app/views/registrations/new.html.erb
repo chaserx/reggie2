@@ -1,0 +1,7 @@
+<% title "New Registration" %>
+
+<%= render :partial => 'form' %>
+
+<% if current_user %>
+<p><%= link_to "Back to List", registrations_path %></p>
+<% end %>
