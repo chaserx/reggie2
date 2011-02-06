@@ -3,7 +3,7 @@ class RegistrationsController < ApplicationController
   require 'zip/zip'
   require 'zip/zipfilesystem'
   
-  before_filter :require_user, :except => [:show, :new, :create]
+  # before_filter :require_user, :except => [:show, :new, :create]
   
   before_filter :registration_open?, :only => :new
   
