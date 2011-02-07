@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110206024458) do
+ActiveRecord::Schema.define(:version => 20110207183550) do
 
   create_table "registrations", :force => true do |t|
     t.string   "title"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(:version => 20110206024458) do
     t.string   "abstract_content_type"
     t.integer  "abstract_file_size"
     t.datetime "abstract_updated_at"
+  end
+
+  create_table "settings", :force => true do |t|
+    t.boolean  "allow_registration", :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
