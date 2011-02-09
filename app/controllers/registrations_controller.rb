@@ -7,6 +7,8 @@ class RegistrationsController < ApplicationController
   
   before_filter :registration_open?, :only => :new
   
+  #before_filter :authenticate_user!, :only => [:index, :edit, :update, :destroy]
+  
   def index
     @registrations = Registration.all
     respond_to do |format|
