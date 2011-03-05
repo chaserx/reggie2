@@ -1,5 +1,5 @@
 Reggie2::Application.routes.draw do
-  devise_for :users, :controllers => {:users => "users"}
+  devise_for :users
   
   resources :registrations
 
