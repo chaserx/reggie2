@@ -24,11 +24,11 @@ gem "friendly_id", "~> 3.2.1"
 # gem 'rubyzip2'
 
 # Authentication / Authorization
-gem 'devise'
+# gem 'devise'
 # gem 'cancan'
 # hpricot and ruby_parser required for devise:views generator
-gem 'hpricot', :group => :development
-gem 'ruby_parser', :group => :development
+# gem 'hpricot', :group => :development
+# gem 'ruby_parser', :group => :development
 
 # jQuery
 gem 'jquery-rails', '>= 0.2.6'
@@ -42,6 +42,8 @@ gem "nifty-generators", :group => :development
 gem "paperclip", "~> 2.3"
 
 gem "rubyzip"
+
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # Use unicorn as the web server
 # gem 'unicorn'
