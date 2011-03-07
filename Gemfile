@@ -45,6 +45,8 @@ gem "rubyzip"
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
+gem 'carmen'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
