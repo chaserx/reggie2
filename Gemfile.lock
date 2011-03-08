@@ -29,6 +29,10 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.9)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     babosa (0.2.2)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
@@ -84,11 +88,13 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
     will_paginate (3.0.pre2)
+    xml-simple (1.0.14)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-s3
   bcrypt-ruby
   carmen
   friendly_id (~> 3.2.1)
