@@ -31,7 +31,7 @@
 <h3>&raquo; Admin Actions</h3>
 <div id="adminActions">
   <p>Registration is:</p><p id="regavail" class="regstatus"><%= is_reg_open? %></p>
-  <%= link_to "link text...", :action => 'toggle_registration_availability', :method => :get, :confirm => "Are you sure?" %>
+  <%= link_to "Toggle Registrations", :action => 'toggle_registration_availability', :method => :get, :confirm => "Are you sure?" %> |
 	<%= link_to 'New Registration', new_registration_path %> |
 	<%= link_to 'Download All Registration Records (CSV File)', registrations_path(:csv) %> |
 	<%= link_to 'Download All Abstracts (ZIP file)', registrations_path(:zip) %>
