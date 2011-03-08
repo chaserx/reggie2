@@ -2,10 +2,19 @@
 <div id="new_reg">
 <h1>Symposium Registration</h1>
 
-<%= error_messages_for :registration %>
+<% if @registration.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% for message in @registrations.errors.full_messages %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <div>
 	<fieldset><legend>Part 1: Personal information</legend>
-	<% form_for @registration, :html => { :multipart => true } do |f| %>
+	<%= form_for @registration, :html => { :multipart => true } do |f| %>
 	  <ul id="formSection">
 			<li><p><strong>Name<br /></strong><span><%= f.text_field :title, :size => 4 %> <%= label(:registration, :title, "Mr.") %></span> <span><%= f.text_field :firstname, :size => 20 %> <%= label(:registratnt, :firstname, "Blue") %></span><span><%= f.text_field :lastname, :size => 30 %> <%= label(:registration, :lastname, "Wildcat") %></span></p></li>
 			<li><p><strong>Email</strong><br /><span><%= f.text_field :email %> <%= label(:registration, :email, "wildcat@email.uky.edu") %></span></p></li>

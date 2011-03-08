@@ -4,7 +4,7 @@ class Registration < ActiveRecord::Base
   
 
 
-  has_attached_file :abstract, :storage => :s3, :s3_credentials => "#{RAILS_ROOT}/config/s3.yml", :path => "/:style/:filename"
+  has_attached_file :abstract, :storage => :s3, :s3_credentials => "#{Rails.root.to_s}/config/s3.yml", :path => "/:style/:filename"
   
   validates_attachment_content_type :abstract, :content_type => ['application/msword', 'application/pdf', 'application/x-unknown-application-pdf', 'text/plain', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/richtext'], :on => :create, :unless => Proc.new { |registrant| registrant.abstract_file_name.nil? }
   validates_attachment_size :abstract, :less_than => 5.megabytes, :on => :create, :unless => Proc.new { |registrant| registrant.abstract_file_name.nil? }, :message => "file must be less than 5 MB"

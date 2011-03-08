@@ -1,6 +1,29 @@
 Reggie2::Application.routes.draw do
+  
+  #get "toggle_registration_availability" => "admin#toggle_registration_availability", :as => "toggle_registration_availability"
+  #resources :admin do
+    #get "toggle_registration_availability", :on => :member
+#  end
+  resources :admin
+  
+  get "toggle_registration_availability" => "registrations#toggle_registration_availability", :as => "toggle_registration_availability"
+  
+  # get "admin/toggle_registration_availability", :as => "toggle_registration_availability"
+  
+  get "page/index", :as => "index"
+  
+  get "page/about", :as => "about"
+  
+  get "page/travel", :as => "travel"
+  
+  get "page/privacy", :as => "privacy"
+  
+  get "page/schedule", :as => "schedule"
+  
+  get "page/terms", :as => "terms"
+  
   #get "sessions/new"
-
+  
   #get "users/new"
   
   

@@ -97,12 +97,27 @@ class RegistrationsController < ApplicationController
     redirect_to registrations_url
   end
   
+  def toggle_registration_availability
+    @setting = Settings.first
+    case @setting.allow_registration
+    when false
+      @setting.allow_registration = TRUE
+    when true
+      @setting.allow_registration = FALSE
+    end
+    
+    if @setting.save
+      # it's not ajax, but it works. humph.
+      redirect_to registrations_path
+    end
+  end
+  
   protected
   
   def registration_open?
     #redirect_to :action => 'new' and return false unless Settings.allow_registrations
     
-    if Settings.allow_registrations
+    if Settings.first.allow_registration
       return false
     else
       flash[:error] = "Sorry, symposium registration is closed."
