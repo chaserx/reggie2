@@ -5,16 +5,17 @@
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application', 'registration' %>
     <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
     <%= yield(:head) %>
     <link rel="shortcut icon" href="/favicon.ico" />
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
     <div id="container">
       <div id="header">
       	<%- flash.each do |key, msg| -%>
       	<div id="flash_<%= key %>">
-      		<p><%= msg %> <%= link_to_function 'close', "Effect.Fade('flash_#{key}')" %></p>
+      		<p><%= msg %></p>
       	</div>
       	<%- end -%>
       </div>

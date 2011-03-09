@@ -3,7 +3,7 @@ class RegistrationsController < ApplicationController
   require 'zip/zip'
   require 'zip/zipfilesystem'
   
-  # before_filter :require_user, :except => [:show, :new, :create]
+  before_filter :logged_in?, :except => [:show, :new, :create]
   
   before_filter :registration_open?, :only => :new
   
@@ -94,7 +94,7 @@ class RegistrationsController < ApplicationController
     @registration.abstract.clear
     @registration.destroy
     flash[:notice] = "Successfully destroyed registration."
-    redirect_to registrations_url
+    redirect_to registrations_path
   end
   
   def toggle_registration_availability

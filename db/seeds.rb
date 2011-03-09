@@ -6,4 +6,4 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-Settings.create(:allow_registrations = TRUE)
+Settings.create(:allow_registration => true)
