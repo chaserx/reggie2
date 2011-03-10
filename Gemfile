@@ -47,10 +47,6 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'carmen'
 
-# Use unicorn as the web server
-group :development do
-  gem 'unicorn'
-end
 
 # Deploy with Capistrano
 # gem 'capistrano'

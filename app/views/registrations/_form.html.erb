@@ -24,7 +24,7 @@
 			<li><p><strong>Status</strong><br /><span><%= select(:registration, :status, {"UK Faculty" => "UK Faculty", "Non-UK Faculty" => "Non-UK Faculty", "Post-doc" => "Post-doc", "Student" => "Student", "Staff" => "Staff"}.sort, {:selected => nil, :include_blank => true}) %></span></p></li>
 			<li><p><strong>Address</strong><br /><span><%= f.text_field :address1 %> <%= label(:registration, :address1, "Street Address") %></span></p></li>
 			<li><p><span><%= f.text_field :address2 %><%= label(:registration, :address2, "Address Cont.") %></span></p></li>
-			<li><p><span><%= f.text_field :city %><%= label(:registration, :city) %></span><span><%= f.text_field :state, :size => 2 %><%= label(:registration, :state) %></span></p></li>
+			<li><p><span><%= f.text_field :city %><%= label(:registration, :city) %></span><span><%= f.select(:state, States::US_STATES.each { | k,v | [k, v]}, { :selected => "KY" } ) %> <%= label(:registration, :state) %></span></p></li>
 			<li><p><span><%= f.text_field :zip, :size => 10 %> <%= label(:registration, :zip, "Zip code") %></span></p></li>
 			<li><p><strong>Phone</strong><br /><span><%= f.text_field :phone %><%= label(:registration, :phone, "859-257-9000") %></span></p></li>
 		</ul>
