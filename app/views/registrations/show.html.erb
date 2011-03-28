@@ -43,15 +43,15 @@
 	</ul>
 	<h3>On-campus</h3>
 	<p>Please supply this receipt to your departmental business officer for payment by JV.</p>
-	<p>Please send a copy of the completed JV along with a copy of this registration receipt to both Accounts Payable and <%# display_secretary %>, <%# display_secretary_address %></p>
-	<p>Please transfer funds into account: 1013164500 before <%# display_reg_stop_date %></p>
+	<p>Please send a copy of the completed JV along with a copy of this registration receipt to both Accounts Payable and <%= display_secretary %>, <%= display_secretary_address %></p>
+	<p>Please transfer funds into account: 1013164500 before <%= display_reg_stop_date %></p>
 	<p>Departments are to use either a cost center or WBS account number with GL 530503 (registration).  The account for the Symposium to be credited is 1013164500 with GL 408610 (tuition).</p>
-	<p>Questions? Please contact <%# display_secretary %>, <%# display_secretary_address %></p>
+	<p>Questions? Please contact <%= display_secretary %>, <%= display_secretary_address %></p>
 	<h3>Off-campus</h3>
-	<p>Mail a copy of this registration receipt along with your payment by <%# display_reg_stop_date %> to:</p>
-	<p><%# display_director %><br />
+	<p>Mail a copy of this registration receipt along with your payment by <%= display_reg_stop_date %> to:</p>
+	<p><%= display_director %><br />
 	Symposium Director<br />
-	<%# display_director_address %></p>
+	<%= display_director_address %></p>
 </div>
 <% if current_user %>
 <p>
