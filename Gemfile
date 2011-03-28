@@ -27,7 +27,7 @@ gem "friendly_id", "~> 3.2.1"
 
 # Authentication / Authorization
 # gem 'devise'
-# gem 'cancan'
+gem 'cancan', '>= 1.6.3'
 # hpricot and ruby_parser required for devise:views generator
 # gem 'hpricot', :group => :development
 # gem 'ruby_parser', :group => :development
@@ -46,7 +46,6 @@ gem "rubyzip"
 gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'carmen'
-
 
 
 # Deploy with Capistrano

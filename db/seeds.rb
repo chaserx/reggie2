@@ -7,3 +7,5 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 Settings.create(:allow_registration => true)
+
+User.create(:email => "admin@registrationapp.com", :password => "4dm1n")

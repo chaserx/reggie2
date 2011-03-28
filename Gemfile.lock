@@ -36,6 +36,7 @@ GEM
     babosa (0.2.2)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    cancan (1.6.3)
     carmen (0.2.6)
       carmen
     erubis (2.6.6)
@@ -96,6 +97,7 @@ PLATFORMS
 DEPENDENCIES
   aws-s3
   bcrypt-ruby
+  cancan (>= 1.6.3)
   carmen
   friendly_id (~> 3.2.1)
   hoptoad_notifier
