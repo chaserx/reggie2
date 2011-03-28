@@ -55,7 +55,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    nifty-generators (0.4.4)
+    nifty-generators (0.4.6)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -100,7 +100,7 @@ DEPENDENCIES
   friendly_id (~> 3.2.1)
   hoptoad_notifier
   jquery-rails (>= 0.2.6)
-  nifty-generators
+  nifty-generators (>= 0.4.6)
   paperclip (~> 2.3)
   rails (= 3.0.3)
   rubyzip

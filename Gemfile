@@ -5,7 +5,9 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3-ruby', :require => 'sqlite3', :group => :development
+
+gem "nifty-generators", '>= 0.4.6', :group => :development
 
 # store attachments ?
 # gem "paperclip"
@@ -37,8 +39,6 @@ gem 'jquery-rails', '>= 0.2.6'
 # Pagination with pre-release of Rails 3 compatible will_paginate
 gem "will_paginate", "~> 3.0.pre2"
 
-gem "nifty-generators", :group => :development
-
 gem "paperclip", "~> 2.3"
 
 gem "rubyzip"
@@ -46,6 +46,7 @@ gem "rubyzip"
 gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'carmen'
+
 
 
 # Deploy with Capistrano
