@@ -8,3 +8,4 @@ config:
   director_address: Department of Computer Science
   secretary:  Ms. Moneypenny
   secretary_address:  10 Downing Street
+  admin_email: admin@registrationapp.com

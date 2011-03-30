@@ -1,4 +1,4 @@
-Hi, <%= h @registration.title %> <%= h @registration.firstname %> <%= h @registration.lastname %>!
+Hi, <%= @registration.title %> <%= @registration.firstname %> <%= @registration.lastname %>!
 
 You've received this email because you have registered for the 30th Symposium in Reproductive Science and Women's Health. 
 
@@ -14,4 +14,4 @@ Symposium Registration Server
 ---
 Sent by RegistrationApp Mailer
 
-For issues related to your registration, email: chase.southard@uky.edu
+For issues related to your registration, email: <%= @admin_email %>

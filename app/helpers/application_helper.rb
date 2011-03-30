@@ -21,11 +21,15 @@ module ApplicationHelper
   end
   
   def display_director_address
-    return APP_CONFIG['director_address']
+    return APP_CONFIG['director_address'].html_safe
   end
   
   def display_secretary_address
     return APP_CONFIG['secretary_address']
+  end
+  
+  def display_admin_email
+    return APP_CONFIG['admin_email']
   end
 
 end
