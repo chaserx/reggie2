@@ -1,7 +1,8 @@
 class RegistrationsController < ApplicationController
   require 'csv'
-  require 'zip/zip'
-  require 'zip/zipfilesystem'
+  #require 'zip/zip'
+  #require 'zip/zipfilesystem'
+  require 'zipruby'
   
   before_filter :logged_in?, :except => [:show, :new, :create]
   
@@ -29,18 +30,18 @@ class RegistrationsController < ApplicationController
                      #registrations_with_attachments = Registration.find_by_sql('SELECT * FROM registrations WHERE abstract_file_name NOT LIKE ""')
                      registrations_with_attachments = Registration.find(:all, :conditions => "abstract_file_name IS NOT NULL")
                      headers['Cache-Control'] = 'no-cache'  
-                     tmp_filename = "#{RAILS_ROOT}/tmp/tmp_zip_" <<
+                     tmp_filename = "#{Rails.root.to_s}/tmp/tmp_zip_" <<
                                      Time.now.to_f.to_s <<
                                      ".zip"
 
                      # rubyzip gem version 0.9.4
                      # rdoc http://rubyzip.sourceforge.net/                
-                     Zip::ZipFile.open(tmp_filename, Zip::ZipFile::CREATE) do |zip|
+                     Zip::Archive.open(tmp_filename, Zip::CREATE) do |zip|
                        #get all of the attachments
 
                        # attempt to get files stored on S3
                        # apparently works thanks to Vlad Romascanu; http://stackoverflow.com/questions/2338758/zip-up-all-paperclip-attachments-stored-on-s3
-                       registrations_with_attachments.each { |e| zip.add("abstracts/#{e.abstract.original_filename}", e.abstract.to_file.path) }
+                       registrations_with_attachments.each { |e| zip.add_file("abstracts/#{e.abstract.original_filename}", e.abstract.to_file.path) }
                        # => No such file or directory - http://s3.amazonaws.com/bucket/original/abstract.txt
                        # Should note that these files in S3 bucket are publicly accessible. No ACL. 
 
@@ -69,6 +70,7 @@ class RegistrationsController < ApplicationController
     #if verify_recaptcha(:private_key => PASSWORDS_CONFIG[:recaptcha_private_key]) and @registration.save
     if @registration.save
       flash[:notice] = "Successfully created registration."
+      RegistrationMailer.registration_confirmation(@registration).deliver
       redirect_to @registration
     else
       render :action => 'new'

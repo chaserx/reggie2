@@ -5,3 +5,4 @@ log/*.log
 tmp/**/*
 config/s3.yml
 config/app_config.yml
+config/passwords_config.yml

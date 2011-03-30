@@ -24,7 +24,7 @@ gem "friendly_id", "~> 3.2.1"
 
 # To zip or not to zip. 
 # gem 'rubyzip2'
-
+gem 'zipruby'
 # Authentication / Authorization
 # gem 'devise'
 gem 'cancan', '>= 1.6.3'
@@ -41,7 +41,7 @@ gem "will_paginate", "~> 3.0.pre2"
 
 gem "paperclip", "~> 2.3"
 
-gem "rubyzip"
+gem 'mail'
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
