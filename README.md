@@ -21,10 +21,10 @@ Each iteration adds new features and cleans up code.
 * Receive information from attendees including an abstract via file upload (S3 Storage using Paperclip)
 * Email attendee their registration receipt (using SendGrid addon at Heroku)
 * All registrations receipts are publicly available (URLs slugged with Friendly_ID)
-* All administrative actions (view all/index, edit, delete) require authorization via Authlogic. Although, openid seems like a better idea.
-* Export all registration data except for attachments into CSV (FasterCSV) formatted file
+* All administrative actions (view all/index, edit, delete) require authorization via a simple auth (see Railscast). Although, openid seems like a better idea.
+* Export all registration data except for attachments into CSV (Ruby 1.9 CSV nee fastercsv) formatted file
 * Download all abstracts from S3 into a zip file (Rubyzip; Paperclip)
-* Toggle on/off registrations (rails-settings)
+* Toggle on/off registrations
 
 ## Inactions:
 
@@ -86,15 +86,13 @@ Heroku and Amazon S3 for file uploads, but this could be easily modified for a V
 
 ## Plugins / Gems / Generators
 
-* [Devise](https://github.com/plataformatec/devise)
-* [FasterCSV](http://rubygems.org/gems/fastercsv)
 * [Friendly_ID](http://github.com/norman/friendly_id)
 * [Paperclip](http://github.com/thoughtbot/paperclip)
 * [Nifty_Generators](http://github.com/ryanb/nifty-generators)
 * [Hoptoad](http://github.com/thoughtbot/hoptoad_notifier)
 * [Heroku](http://rubygems.org/gems/heroku)
-* [Rubyzip](http://rubygems.org/gems/rubyzip)
-* [Rails-settings](http://github.com/Squeegy/rails-settings)
+* [Zipruby](http://rubygems.org/gems/zipruby)
+
 
 ## Services used
 
