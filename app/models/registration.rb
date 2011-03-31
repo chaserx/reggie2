@@ -1,9 +1,27 @@
 class Registration < ActiveRecord::Base
   
-  # has_friendly_id :lastname, :use_slug => true
+  attr_accessible :title,
+                  :firstname,
+                  :lastname,
+                  :organization,
+                  :address1,
+                  :address2,
+                  :city,
+                  :state,
+                  :zip,
+                  :phone,
+                  :email,
+                  :status,
+                  :dept,
+                  :eveningsession,
+                  :guest,         
+                  :partysize,
+                  :lunch,         
+                  :bizperson,
+                  :bizpersonemail,
+                  :bizpersonphone
   
-
-
+  
   has_attached_file :abstract, :storage => :s3, :s3_credentials => "#{Rails.root.to_s}/config/s3.yml", :path => "/:style/:filename"
   
   validates_attachment_content_type :abstract, :content_type => ['application/msword', 'application/pdf', 'application/x-unknown-application-pdf', 'text/plain', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/richtext'], :on => :create, :unless => Proc.new { |registrant| registrant.abstract_file_name.nil? }
@@ -55,7 +73,11 @@ class Registration < ActiveRecord::Base
     end
   end
   
+  has_friendly_id :firstname_and_lastname, :use_slug => true, :strip_non_ascii => true
   
+  def firstname_and_lastname
+    "#{self.firstname} #{self.lastname}"
+  end
   
  
   
