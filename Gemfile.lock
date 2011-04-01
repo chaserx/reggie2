@@ -39,6 +39,7 @@ GEM
     cancan (1.6.3)
     carmen (0.2.6)
       carmen
+    dalli (1.0.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     friendly_id (3.2.1)
@@ -99,6 +100,7 @@ DEPENDENCIES
   bcrypt-ruby
   cancan (>= 1.6.3)
   carmen
+  dalli
   friendly_id (~> 3.2.1)
   hoptoad_notifier
   jquery-rails (>= 0.2.6)

@@ -47,6 +47,10 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 gem 'carmen'
 
+group :production do
+  gem 'dalli'
+end
+
 
 # Deploy with Capistrano
 # gem 'capistrano'
