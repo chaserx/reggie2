@@ -51,6 +51,7 @@ group :production do
   gem 'dalli'
 end
 
+gem 'heroku'
 
 # Deploy with Capistrano
 # gem 'capistrano'
