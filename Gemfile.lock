@@ -37,8 +37,6 @@ GEM
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cancan (1.6.3)
-    carmen (0.2.6)
-      carmen
     configuration (1.2.0)
     dalli (1.0.3)
     erubis (2.6.6)
@@ -109,7 +107,6 @@ DEPENDENCIES
   aws-s3
   bcrypt-ruby
   cancan (>= 1.6.3)
-  carmen
   dalli
   friendly_id (~> 3.2.1)
   heroku

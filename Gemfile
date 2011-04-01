@@ -45,7 +45,6 @@ gem 'mail'
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
-gem 'carmen'
 
 group :production do
   gem 'dalli'
