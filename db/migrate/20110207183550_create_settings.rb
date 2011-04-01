@@ -1,7 +1,7 @@
 class CreateSettings < ActiveRecord::Migration
   def self.up
     create_table :settings do |t|
-      t.boolean :allow_registration, :default => 1
+      t.boolean :allow_registration, :default => TRUE
 
       t.timestamps
     end
