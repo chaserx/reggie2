@@ -29,28 +29,35 @@ class RegistrationsController < ApplicationController
       format.zip {
                      #registrations_with_attachments = Registration.find_by_sql('SELECT * FROM registrations WHERE abstract_file_name NOT LIKE ""')
                      registrations_with_attachments = Registration.find(:all, :conditions => "abstract_file_name IS NOT NULL")
-                     headers['Cache-Control'] = 'no-cache'  
-                     tmp_filename = "#{Rails.root.to_s}/tmp/tmp_zip_" <<
+                     
+                     if registrations_with_attachments.size > 0
+                       
+                       headers['Cache-Control'] = 'no-cache'  
+                       tmp_filename = "#{Rails.root.to_s}/tmp/tmp_zip_" <<
                                      Time.now.to_f.to_s <<
                                      ".zip"
 
-                     # rubyzip gem version 0.9.4
-                     # rdoc http://rubyzip.sourceforge.net/                
-                     Zip::Archive.open(tmp_filename, Zip::CREATE) do |zip|
+                       # zipruby gem
+                       Zip::Archive.open(tmp_filename, Zip::CREATE) do |zip|
                        #get all of the attachments
 
                        # attempt to get files stored on S3
-                       # apparently works thanks to Vlad Romascanu; http://stackoverflow.com/questions/2338758/zip-up-all-paperclip-attachments-stored-on-s3
-                       registrations_with_attachments.each { |e| zip.add_file("abstracts/#{e.abstract.original_filename}", e.abstract.to_file.path) }
+                       # apparently works thanks to Vlad Romascanu;       
+                       # http://stackoverflow.com/questions/2338758/zip-up-all-paperclip-attachments-stored-on-s3
+                          registrations_with_attachments.each { |e| zip.add_file("abstracts/#{e.abstract.original_filename}", e.abstract.to_file.path) }
                        # => No such file or directory - http://s3.amazonaws.com/bucket/original/abstract.txt
                        # Should note that these files in S3 bucket are publicly accessible. No ACL. 
 
                        # works with local storage. Thanks to Henrik Nyh
                        # registrations_with_attachments.each { |e| zip.add("abstracts/#{e.abstract.original_filename}", e.abstract.path(:original))   }
-                     end     
+                       end
 
-                     send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => tmp_filename.to_s)
-                     File.delete tmp_filename
+                       send_data(File.open(tmp_filename, "rb+").read, :type => 'application/zip', :disposition => 'attachment', :filename => tmp_filename.to_s)
+                       File.delete tmp_filename
+                       
+                    else
+                        redirect_to registrations_path, :notice => "No attachments to zip up"
+                    end
                }
     #respond_to end
     end

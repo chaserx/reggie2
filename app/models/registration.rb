@@ -19,7 +19,8 @@ class Registration < ActiveRecord::Base
                   :lunch,         
                   :bizperson,
                   :bizpersonemail,
-                  :bizpersonphone
+                  :bizpersonphone, 
+                  :abstract
   
   
   has_attached_file :abstract, :storage => :s3, :s3_credentials => "#{Rails.root.to_s}/config/s3.yml", :path => "/:style/:filename"
