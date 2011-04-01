@@ -2,7 +2,7 @@
 <div id="user_nav">
   <% if current_user %>
     <p>Welcome, <%= current_user.email %></p>
-    <%= link_to "Edit Profile", edit_user_path(:current) %> |
+    <%= link_to "Edit Profile", edit_user_path(current_user) %> |
     <%= link_to "Logout", log_out_path %><br />
     <%= link_to "Create New User", new_user_path %>
   <% else %>
