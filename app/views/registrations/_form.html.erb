@@ -50,7 +50,7 @@
 	<fieldset><legend>Part 3: Registration Details</legend>
 	  <p>
 	  	Will you attend the Trainee Lunch? <%= select(:registration, :lunch, {"Yes" => 1, "No" => 0}, :include_blank => true) %><br />
-			<span style="font-size:0.8em;">(<%= label(:registration, :lunch, "If you&#x27;re a trainee, meet the guest speakers over lunch") %>)</span>
+			<span style="font-size:0.8em;">(<%= label(:registration, :lunch, "If you're a trainee, meet the guest speakers over lunch") %>)</span>
 	  </p>
 		<p>
 	  	Will you attend the evening session? <%= select(:registration, :eveningsession, {"Yes" => 1, "No" => 0}, :include_blank => true) %><br />
@@ -72,6 +72,6 @@
 </div>
   
   <p>
-    <%= f.submit "Register" %>
+    <%= f.submit "Register", {:disable_with => "Please wait. Registering..."} %>
   </p>
 <% end %> 
